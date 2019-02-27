@@ -3,10 +3,10 @@ module.exports = function makeExchange(currency) {
     // Your code goes here!
     // Return an object containing the minimum number of coins needed to make change
 	var result = {};
-	if (amount > 10000) {
+	if (currency > 10000) {
 		result['error'] = "You are rich, my friend! We don't have so much coins for exchange";
 
-	} else if (amount > 0) {
+	} else if (currency > 0) {
 		var H = 50,
 			h = 0,
 			Q = 25,
@@ -17,10 +17,10 @@ module.exports = function makeExchange(currency) {
 			n = 0,
 			P = 1,
 			p = 0;
-		var am = amount*100,
+		var am = currency*100,
 			rest;
-		h = Math.floor(amount / H);
-		rest = amount - h*H;
+		h = Math.floor(currency / H);
+		rest = currency - h*H;
 		q = Math.floor(rest / Q);
 		rest = rest - q * Q;
 		d = Math.floor(rest / D);
